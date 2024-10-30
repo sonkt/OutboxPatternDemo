@@ -1,0 +1,32 @@
+@OutboxPatternDemo_HostAddress = http://localhost:5031
+
+POST {{OutboxPatternDemo_HostAddress}}/api/order
+Content-Type: application/json
+
+{
+  "customerName": "Alice",
+  "createdAt": "2023-01-01T00:00:00Z"
+}
+
+###
+# Yêu cầu lấy tất cả đơn hàng
+GET {{OutboxPatternDemo_HostAddress}}/api/order
+Accept: application/json
+
+###
+
+# Yêu cầu lấy đơn hàng theo ID
+GET {{OutboxPatternDemo_HostAddress}}/api/order/1
+Accept: application/json
+
+###
+
+# Yêu cầu lấy đơn hàng theo trạng thái
+GET {{OutboxPatternDemo_HostAddress}}/api/order/status/Processing
+Accept: application/json
+
+###
+
+# Yêu cầu lấy đơn hàng theo tên khách hàng
+GET {{OutboxPatternDemo_HostAddress}}/api/order/customer/Alice
+Accept: application/json
